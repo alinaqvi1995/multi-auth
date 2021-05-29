@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Vendor;
+use Illuminate\Support\Facades\Validator;
 
 class VendorController extends Controller
 {
@@ -19,19 +21,23 @@ class VendorController extends Controller
     protected function store_vendor(Request $request)
     {
         return Validator::make($request, [
-            'name' => ['required', 'string', 'max:255'],
-            'email' => ['required', 'string', 'email', 'max:255', 'unique:vendors'],
+            'name' => ['required'],
+            'email' => ['required'],
             'password' => ['required', 'string', 'min:8', 'confirmed'],
         ]);
 
-        $vend = Vendor::create([
-            $vend->name = $request->name;
-            $vend->email = $request->email;
-            $vend->password = $request->password;
-            // 'name' => $request['name'],
-            // 'email' => $request['email'],
-            // 'password' => Hash::make($request['password']),
-        ]);
+        // $vend = Vendor::create([
+        //     $vend->name = $request->name,
+        //     $vend->email = $request->email,
+        //     $vend->password = $request->password,
+        //     // 'name' => $request['name'],
+        //     // 'email' => $request['email'],
+        //     // 'password' => Hash::make($request['password']),
+        // ]);
+        $vend = new Vendor();
+        $vend->name = $request->name;
+        $vend->email = $request->email;
+        $vend->password = $request->password;
         $vend->save();
     }
 }

@@ -30,8 +30,12 @@ Route::get('/admin/login', [AdminController::class, 'login_admin'])->name('admin
 
 // Vendor Routes
 Route::get('/vendor/login', [VendorController::class, 'login_vendor'])->name('vendor.login');
-Route::post('/vendor/register', [VendorController::class, 'create_vendor'])->name('vendor.register');
+Route::get('/vendor/register', [VendorController::class, 'create_vendor'])->name('vendor.register');
 
 // Client Routes
 Route::get('/client/login', [ClientController::class, 'login_client'])->name('client.login');
 Route::get('/client/register', [ClientController::class, 'create_client'])->name('client.login');
+
+
+
+Route::post('/registerNew', [VendorController::class, 'store_vendor']);
