@@ -8,12 +8,12 @@ class ClientController extends Controller
 {
     public function login_client()
     {
-        return view('auth/client-login');
+        return view('auth/client/client-login');
     }
 
     protected function create_client()
     {
-        return view('auth/vendor/vendor-register');
+        return view('auth/client/client-register');
     }
 
     protected function store_client(array $data)

@@ -64,7 +64,7 @@
                                 <br>
                                 <h6 class="btn">OR</h6><br>
 
-                                <a class="btn btn-primary" href="">
+                                <a class="btn btn-primary" href="{{ route('client.register') }}">
                                         {{ __('Register') }}
                                 </a>
                             </div>

@@ -34,7 +34,7 @@ Route::get('/vendor/register', [VendorController::class, 'create_vendor'])->name
 
 // Client Routes
 Route::get('/client/login', [ClientController::class, 'login_client'])->name('client.login');
-Route::get('/client/register', [ClientController::class, 'create_client'])->name('client.login');
+Route::get('/client/register', [ClientController::class, 'create_client'])->name('client.register');
 
 
 
